@@ -1,9 +1,9 @@
 import React from 'react'
 import TweetList from './TweetList'
-import NewTweet from './NewTweet'
+import MainPanel from './MainPanel'
 
 const App = () => (
-  <NewTweet />
+  <MainPanel />
 )
 
 export default App
