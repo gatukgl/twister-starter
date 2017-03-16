@@ -1,11 +1,11 @@
-import config from './config'
+import config from './config/index.template.js'
 
 const serverIp = config.api.host
 const port = config.api.port
 
 const fetchTweets = username => new Promise((resolve, reject) => {
   const uri = `http://${serverIp}:${port}/api/tweets`
-  const filter = `{ "where": { "username": "${username}" }}`
+  const filter = `{ "where": { "username": "kaizerwing" }}`
 
   fetch(`${uri}?filter=${filter}`, { mode: 'cors' })
     .then(response => response.json())
@@ -14,7 +14,7 @@ const fetchTweets = username => new Promise((resolve, reject) => {
 })
 
 const fetchProfile = username => new Promise((resolve, reject) => {
-  const uri = `http://${serverIp}:${port}/api/TwisterUsers/${username}`
+  const uri = `http://${serverIp}:${port}/api/TwisterUsers/kaizerwing`
 
   fetch(uri, { mode: 'cors' })
     .then((response) => {
@@ -33,7 +33,7 @@ const fetchFollowStatus = (username, followedUsername) => new Promise((resolve, 
     resolve(false)
   }
 
-  const uri = `http://${serverIp}:${port}/api/Follows/count?where={"username":"${username}","followedUsername":"${followedUsername}", "isFollowing": true}`
+  const uri = `http://${serverIp}:${port}/api/Follows/count?where={"username":"kaizerwing","followedUsername":"${followedUsername}", "isFollowing": true}`
 
   fetch(uri, { mode: 'cors' })
     .then((response) => {
@@ -53,7 +53,7 @@ const fetchFollowStatus = (username, followedUsername) => new Promise((resolve, 
 })
 
 const follow = (username, followedUsername) => new Promise((resolve, reject) => {
-  const uri = `http://${serverIp}:${port}/api/Follows/upsertWithWhere?where={"username":"${username}", "followedUsername":"${followedUsername}"}`
+  const uri = `http://${serverIp}:${port}/api/Follows/upsertWithWhere?where={"username":"kaizerwing", "followedUsername":"${followedUsername}"}`
   fetch(uri, {
     method: 'POST',
     headers: {
@@ -80,7 +80,7 @@ const follow = (username, followedUsername) => new Promise((resolve, reject) => 
 })
 
 const unfollow = (username, followedUsername) => new Promise((resolve, reject) => {
-  const uri = `http://${serverIp}:${port}/api/Follows/upsertWithWhere?where={"username":"${username}","followedUsername":"${followedUsername}"}`
+  const uri = `http://${serverIp}:${port}/api/Follows/upsertWithWhere?where={"username":"kaizerwing","followedUsername":"${followedUsername}"}`
   fetch(uri, {
     method: 'POST',
     headers: {

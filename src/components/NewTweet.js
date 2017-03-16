@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import config from '../config'
+import config from '../config/index.template.js'
 
 class NewTweet extends Component {
   constructor(props) {
