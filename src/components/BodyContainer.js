@@ -73,12 +73,7 @@ class BodyContainer extends Component {
 
   render() {
     const ownerUsername = this.props.ownerUsername || this.state.username
-    const nameMap = {
-      kaizerwing: 'Supasate Choochaisri',
-      topscores: 'Arnupharp Viratanapanu',
-      jjirawute: 'Jirawute Cheungsirakulwit',
-    }
-    const ownerName = nameMap[[ownerUsername]]
+    const ownerName = 'Sudarat Chattanon'
     const isOwnProfile = this.state.username === ownerUsername
 
     return (
