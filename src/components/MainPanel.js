@@ -13,15 +13,15 @@ class MainPanel extends React.Component {
           id: 0,
           name: 'Sudarat Chattanon',
           username: '@gatukgl',
-          text: 'This day is awesome!!'
+          text: 'This day is awesome!!',
         },
         {
           id: 1,
           name: 'Yothin M.',
           username: '@yothinix',
-          text: 'This is awesome day!!!!'
-        }
-      ]
+          text: 'This is awesome day!!!!',
+        },
+      ],
     }
 
     this.addToTweetList = this.addToTweetList.bind(this)
@@ -35,13 +35,13 @@ class MainPanel extends React.Component {
       tweets: [
         ...this.state.tweets,
         tweetWithId,
-      ]
+      ],
     })
   }
 
   render() {
     return (
-      <div className='main-panel'>
+      <div className="main-panel">
         <NewTweet
           name={this.state.name}
           username={this.state.username}
